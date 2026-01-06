@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jago Reparasi — Servis Tas, Sepatu, Koper & Aksesori</title>
+  <meta name="description" content="Jago Reparasi melayani perbaikan tas, sepatu, koper, gesper, dompet. Jahit ulang, ganti resleting, repaint, sol, handle, roda koper, dan perawatan. Estimasi dulu, pengerjaan rapi." />
+  <meta name="theme-color" content="#0b0b0d" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar" id="top">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#beranda" aria-label="Jago Reparasi">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__title">Jago Reparasi</span>
+          <span class="brand__sub">Tas • Sepatu • Koper • Aksesori</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navigasi">
+        <a class="nav__link" href="#layanan">Layanan</a>
+        <a class="nav__link" href="#harga">Harga</a>
+        <a class="nav__link" href="#portofolio">Before/After</a>
+        <a class="nav__link" href="#faq">FAQ</a>
+        <a class="btn btn--ghost" href="#booking">Booking</a>
+      </nav>
+
+      <button class="iconbtn" id="btnMenu" aria-label="Buka menu">☰</button>
+    </div>
+
+    <!-- Drawer (mobile) -->
+    <div class="drawer" id="drawer" aria-hidden="true">
+      <button class="drawer__backdrop" id="btnBackdrop" aria-label="Tutup"></button>
+      <div class="drawer__panel">
+        <div class="drawer__head">
+          <div class="drawer__title">Menu</div>
+          <button class="iconbtn" id="btnClose" aria-label="Tutup menu">✕</button>
+        </div>
+        <div class="drawer__links">
+          <a class="drawer__link" href="#layanan">Layanan</a>
+          <a class="drawer__link" href="#harga">Harga</a>
+          <a class="drawer__link" href="#portofolio">Before/After</a>
+          <a class="drawer__link" href="#testimoni">Testimoni</a>
+          <a class="drawer__link" href="#faq">FAQ</a>
+          <a class="drawer__link" href="#booking">Booking</a>
+          <a class="drawer__link" href="#kontak">Kontak</a>
+        </div>
+        <div class="drawer__note muted small">
+          Tip: isi nomor WhatsApp bisnis di <b>script.js</b> agar tombol chat aktif.
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating CTA -->
+  <a class="fab" id="waFab" href="#" aria-label="Chat WhatsApp">
+    <span class="fab__dot" aria-hidden="true"></span>
+    <span class="fab__text">Chat WhatsApp</span>
+  </a>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <div class="pill">
+            <span class="pill__dot" aria-hidden="true"></span>
+            Estimasi dulu • Pengerjaan rapi • Bahan aman
+          </div>
+
+          <h1>Servis tas, sepatu, koper & aksesori—<span class="accent">rapi</span> dan <span class="accent">awet</span>.</h1>
+
+          <p class="muted">
+            Dari resleting macet, jahitan lepas, sol mengelupas, repaint warna pudar,
+            sampai roda koper rusak. Kamu cerita keluhannya, kami cek, lalu kasih estimasi sebelum dikerjakan.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn" href="#booking">Booking Sekarang</a>
+            <button class="btn btn--soft" id="btnQuickWA" type="button">Tanya Cepat</button>
+          </div>
+
+          <div class="trust">
+            <div class="trust__item">
+              <div class="trust__k">Fokus</div>
+              <div class="trust__v">Repair & restore</div>
+            </div>
+            <div class="trust__item">
+              <div class="trust__k">Proses</div>
+              <div class="trust__v">Estimasi → setuju → dikerjakan</div>
+            </div>
+            <div class="trust__item">
+              <div class="trust__k">Hasil</div>
+              <div class="trust__v">Rapi & siap dipakai</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card">
+          <div class="cardTop">
+            <div>
+              <div class="kicker">Layanan populer</div>
+              <div class="cardTop__title">Yang paling sering dikerjakan</div>
+            </div>
+            <span class="chip">Update</span>
+          </div>
+
+          <div class="list" id="popularList"></div>
+
+          <div class="mini">
+            <div class="mini__row">
+              <span class="muted">Jam operasional</span>
+              <b id="openHours">09.00 – 21.00</b>
+            </div>
+            <div class="mini__row">
+              <span class="muted">Area layanan</span>
+              <b id="serviceArea">Sesuaikan lokasimu</b>
+            </div>
+          </div>
+
+          <div class="cardActions">
+            <a class="btn btn--ghost full" href="#harga">Lihat Range Harga</a>
+            <a class="btn full" href="#booking">Buat Booking</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="layanan">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Layanan</h2>
+          <p class="muted">Pilih kategori—klik kartu untuk melihat detail singkat.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Kategori layanan">
+          <button class="tab is-active" data-tab="tas" role="tab" aria-selected="true">Tas</button>
+          <button class="tab" data-tab="sepatu" role="tab" aria-selected="false">Sepatu</button>
+          <button class="tab" data-tab="koper" role="tab" aria-selected="false">Koper</button>
+          <button class="tab" data-tab="aksesoris" role="tab" aria-selected="false">Aksesori</button>
+        </div>
+
+        <div class="cards" id="serviceCards"></div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="harga">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Range Harga</h2>
+          <p class="muted">
+            Ini perkiraan untuk gambaran awal. Harga bisa berubah sesuai bahan, kerusakan, dan kebutuhan sparepart.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <article class="price">
+            <div class="price__top">
+              <div>
+                <div class="kicker">Tas</div>
+                <h3>Repair & Restore</h3>
+              </div>
+              <span class="tag">Rapi</span>
+            </div>
+            <ul class="ul">
+              <li>Jahit ulang / penguatan: <b>mulai 50rb</b></li>
+              <li>Ganti resleting: <b>mulai 80rb</b></li>
+              <li>Ganti handle/tali: <b>mulai 120rb</b></li>
+              <li>Repaint / touch-up: <b>mulai 150rb</b></li>
+            </ul>
+          </article>
+
+          <article class="price">
+            <div class="price__top">
+              <div>
+                <div class="kicker">Sepatu</div>
+                <h3>Sole & Care</h3>
+              </div>
+              <span class="tag">Awet</span>
+            </div>
+            <ul class="ul">
+              <li>Jahit/lem sol: <b>mulai 60rb</b></li>
+              <li>Ganti sol (tergantung model): <b>mulai 180rb</b></li>
+              <li>Repaint / whitening: <b>mulai 120rb</b></li>
+              <li>Deep clean: <b>mulai 50rb</b></li>
+            </ul>
+          </article>
+
+          <article class="price">
+            <div class="price__top">
+              <div>
+                <div class="kicker">Koper</div>
+                <h3>Sparepart</h3>
+              </div>
+              <span class="tag">Fungsional</span>
+            </div>
+            <ul class="ul">
+              <li>Roda koper: <b>mulai 120rb</b></li>
+              <li>Handle tarik: <b>mulai 150rb</b></li>
+              <li>Kunci / pengait: <b>mulai 100rb</b></li>
+              <li>Resleting koper: <b>mulai 180rb</b></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="portofolio">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Before / After</h2>
+          <p class="muted">Template galeri. Nanti kamu tinggal ganti gambar dengan hasil kerja asli.</p>
+        </div>
+
+        <div class="gallery">
+          <div class="shot">
+            <div class="shot__img" aria-hidden="true"></div>
+            <div class="shot__cap">
+              <b>Resleting tas</b>
+              <span class="muted small">Sebelum: macet • Sesudah: lancar</span>
+            </div>
+          </div>
+          <div class="shot">
+            <div class="shot__img" aria-hidden="true"></div>
+            <div class="shot__cap">
+              <b>Sepatu sol lepas</b>
+              <span class="muted small">Sebelum: mengelupas • Sesudah: kuat</span>
+            </div>
+          </div>
+          <div class="shot">
+            <div class="shot__img" aria-hidden="true"></div>
+            <div class="shot__cap">
+              <b>Roda koper</b>
+              <span class="muted small">Sebelum: seret • Sesudah: mulus</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="note muted small">
+          Kamu bisa pakai gambar sendiri: ganti elemen <code>div.shot__img</code> menjadi <code>&lt;img src="foto.jpg"&gt;</code>.
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTI -->
+    <section class="section" id="testimoni">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Testimoni</h2>
+          <p class="muted">Contoh testimoni. Boleh kamu edit di <b>script.js</b>.</p>
+        </div>
+
+        <div class="testi" id="testi"></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>FAQ</h2>
+          <p class="muted">Jawaban singkat untuk pertanyaan yang sering muncul.</p>
+        </div>
+
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="section" id="booking">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Booking Servis</h2>
+          <p class="muted">Isi form untuk membuat pesan otomatis. Kamu bisa copy & kirim via WhatsApp (aktif setelah nomor bisnis diisi).</p>
+        </div>
+
+        <div class="grid2">
+          <form class="form" id="bookingForm">
+            <div class="field">
+              <label class="label" for="nama">Nama</label>
+              <input class="input" id="nama" placeholder="contoh: Salsha" required />
+            </div>
+
+            <div class="field">
+              <label class="label" for="kategori">Kategori</label>
+              <select class="input" id="kategori" required>
+                <option value="Tas">Tas</option>
+                <option value="Sepatu">Sepatu</option>
+                <option value="Koper">Koper</option>
+                <option value="Aksesori">Aksesori (gesper/dompet/dll)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="label" for="barang">Barang</label>
+              <input class="input" id="barang" placeholder="contoh: Tas kulit hitam / Sepatu sneakers" required />
+            </div>
+
+            <div class="field">
+              <label class="label" for="keluhan">Keluhan</label>
+              <textarea class="input input--area" id="keluhan" placeholder="contoh: resleting macet, jahitan lepas, sol mengelupas..." required></textarea>
+            </div>
+
+            <div class="field">
+              <label class="label" for="kota">Kota/Area</label>
+              <input class="input" id="kota" placeholder="contoh: Tangerang" />
+            </div>
+
+            <div class="row">
+              <button class="btn" type="submit">Buat Pesan</button>
+              <button class="btn btn--soft" id="btnCopy" type="button">Copy Pesan</button>
+              <button class="btn btn--ghost" id="btnSendWA" type="button">Kirim WhatsApp</button>
+            </div>
+
+            <div class="muted small" id="bookingHint">
+              Catatan: tombol “Kirim WhatsApp” aktif kalau nomor bisnis sudah diisi di <b>script.js</b>.
+            </div>
+          </form>
+
+          <div class="preview">
+            <div class="preview__head">
+              <div>
+                <div class="kicker">Preview</div>
+                <div class="preview__title">Pesan untuk Jago Reparasi</div>
+              </div>
+              <span class="chip">Auto</span>
+            </div>
+            <pre class="pre" id="previewText">Isi form untuk membuat pesan otomatis…</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="kontak">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Kontak</h2>
+          <p class="muted">Isi data kontak sesuai lokasi kamu.</p>
+        </div>
+
+        <div class="contact">
+          <div class="contact__card">
+            <div class="kicker">Alamat</div>
+            <div class="muted" id="alamat">Belum diisi</div>
+          </div>
+          <div class="contact__card">
+            <div class="kicker">Jam Operasional</div>
+            <div class="muted" id="jam">09.00 – 21.00</div>
+          </div>
+          <div class="contact__card">
+            <div class="kicker">Instagram</div>
+            <div class="muted">@<span id="ig">belumdiisi</span></div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <span>© <span id="year"></span> Jago Reparasi</span>
+          <span class="muted">Servis Tas • Sepatu • Koper • Aksesori</span>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
